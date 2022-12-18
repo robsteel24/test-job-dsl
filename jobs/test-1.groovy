@@ -1,17 +1,19 @@
-pipelineJob('test') {
+#!/usr/bin/env groovy
+
+pipelineJob('test-1') {
   definition {
     cps {
-      script("""
+      script('''
         pipeline {
           agent any
           stages {
-            stage ('test') {
+            stage ('echo') {
               steps {
-                echo "hello"
+                echo "Hello World 1"
               }
             }
           }
-        }""".stripIndent())
+        }'''.stripIndent())
     }
   }
 }
